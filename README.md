@@ -116,6 +116,3 @@ sFID: 6.140433703346162
 Precision: 0.8265
 Recall: 0.5309
 ```
-
-## License
-This project is licensed under the MIT License. See LICENSE for more details
