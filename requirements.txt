@@ -1,0 +1,33 @@
+# create conda venv with python 3.10
+# pip install --upgrade pip setuptools wheel
+# pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu118 (for cuda 11.8)
+
+torch==2.1.1
+torchvision==0.16.1
+torchaudio==2.1.1
+timm
+diffusers
+accelerate
+tensorboard
+packaging
+ninja
+einops
+triton
+transformers
+pytest
+chardet
+yacs
+termcolor
+submitit
+tensorboardX
+fvcore
+seaborn
+
+# Inside the mamba dir: pip install -e .
+
+# for evaluator
+tensorflow-gpu>=2.0
+scipy
+requests
+tqdm
+
