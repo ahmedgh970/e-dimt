@@ -20,11 +20,10 @@ The repository is organised as follows:
   * [Training](#training)
   * [Sampling](#sampling)
   * [Evaluation](#evaluation) 
-  * [License](#license)
  
 ## Documentation
-* This repository is built upon the [fast-DiT github repo](https://github.com/chuanyangjin/fast-DiT), an improved PyTorch implementation of [Scalable Diffusion Models with Transformers (DiT)](https://openaccess.thecvf.com/content/ICCV2023/papers/Peebles_Scalable_Diffusion_Models_with_Transformers_ICCV_2023_paper.pdf).
-* Refer to the [Vim github repo](https://github.com/hustvl/Vim), as the official implementation of the paper [Vision Mamba: Efficient Visual Representation Learning with Bidirectional State Space Model](https://arxiv.org/abs/2401.09417).
+* This repository is built upon the [fast-DiT](https://github.com/chuanyangjin/fast-DiT), an improved PyTorch implementation of [Scalable Diffusion Models with Transformers (DiT)](https://openaccess.thecvf.com/content/ICCV2023/papers/Peebles_Scalable_Diffusion_Models_with_Transformers_ICCV_2023_paper.pdf).
+* Refer to [Vim](https://github.com/hustvl/Vim), as the official implementation of the paper [Vision Mamba: Efficient Visual Representation Learning with Bidirectional State Space Model](https://arxiv.org/abs/2401.09417).
 * Refer to [ADM's TensorFlow evaluation suite](https://github.com/openai/guided-diffusion/tree/main/evaluations) for more details about the compute of FID, Inception Score and other metrics.
 
 ## Folder Structure
@@ -76,7 +75,7 @@ torchrun --nnodes=1 --nproc_per_node=1 extract_features.py --image-size 256 --da
 
 ## Training
 We provide a training script for E-DiMT model in [`train.py`](train.py). Please modify the necessary import and model definition/name to train a different model from the proposed benchmark.
-To launch EDiMT-XL/2 (256x256) training with `N` GPUs on one node:
+To launch EDiMT-L/2 (256x256) training with `N` GPUs on one node:
 
 ```bash
 accelerate launch --multi_gpu --num_processes N --mixed_precision fp16 train.py --model EDiMT-L/2  --image-size 256 --features-path /path/to/store/features
@@ -97,7 +96,7 @@ The sampling results will be saved in the model results dir and inside samples d
 To samples 50K images from E-DiMT model over `N` GPUs, run:
 
 ```bash
-torchrun --nnodes=1 --nproc_per_node=N sample_ddp.py --model DiT-XL/2 --num-fid-samples 50000
+torchrun --nnodes=1 --nproc_per_node=N sample_ddp.py --model EDiMT-L/2 --num-fid-samples 50000
 ```
 
 This script  generates a folder of samples as well as a `.npz` file which can be directly used with [`evaluator/eval.py`](evaluator/eval.py) to compute FID, Inception Score and other metrics, as follows:
