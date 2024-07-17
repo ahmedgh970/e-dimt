@@ -1,27 +1,14 @@
 # create conda venv with python 3.10
-# pip install --upgrade pip setuptools wheel
-# pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu118 (for cuda 11.8)
+# install torch 2.2.1 with cuda 11.8 if using cuda 11.8
+# pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu118
 
-torch==2.1.1
-torchvision==0.16.1
-torchaudio==2.1.1
+#torch==2.1.1
+#torchvision==0.16.1
+#torchaudio==2.1.1
+
 timm
 diffusers
 accelerate
-tensorboard
-packaging
-ninja
-einops
-triton
-transformers
-pytest
-chardet
-yacs
-termcolor
-submitit
-tensorboardX
-fvcore
-seaborn
 
 # for evaluator
 tensorflow
