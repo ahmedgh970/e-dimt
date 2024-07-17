@@ -185,7 +185,7 @@ class DiMT(nn.Module):
 
     def forward_with_cfg(self, x, t, y, cfg_scale):
         """
-        Forward pass of DiVM, but also batches the unconditional forward pass for classifier-free guidance.
+        Forward pass of DiMT, but also batches the unconditional forward pass for classifier-free guidance.
         """
         # https://github.com/openai/glide-text2im/blob/main/notebooks/text2im.ipynb
         half = x[: len(x) // 2]

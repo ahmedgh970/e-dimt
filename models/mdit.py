@@ -54,23 +54,6 @@ class MDiTBlock(nn.Module):
         return x
 
 
-class FinalLayer(nn.Module):
-    def __init__(self, hidden_size, patch_size, out_channels):
-        super().__init__()
-        self.norm_final = nn.LayerNorm(hidden_size, elementwise_affine=False, eps=1e-6)
-        self.linear = nn.Linear(hidden_size, patch_size * patch_size * out_channels, bias=True)
-        self.adaLN_modulation = nn.Sequential(
-            nn.SiLU(),
-            nn.Linear(hidden_size, 2 * hidden_size, bias=True)
-        )
-
-    def forward(self, x, c):
-        shift, scale = self.adaLN_modulation(c).chunk(2, dim=1)
-        x = modulate(self.norm_final(x), shift, scale)
-        x = self.linear(x)
-        return x
-
-
 class MDiT(nn.Module):
     def __init__(
             self,
@@ -183,7 +166,7 @@ class MDiT(nn.Module):
 
     def forward_with_cfg(self, x, t, y, cfg_scale):
         """
-        Forward pass of DiVM, but also batches the unconditional forward pass for classifier-free guidance.
+        Forward pass of MDiT, but also batches the unconditional forward pass for classifier-free guidance.
         """
         # https://github.com/openai/glide-text2im/blob/main/notebooks/text2im.ipynb
         half = x[: len(x) // 2]
