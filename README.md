@@ -28,7 +28,7 @@ The repository is organised as follows:
 
 ## Folder Structure
 ``` 
-E-DiMT-main
+e-dimt-main
 ├── diffusion/                    # Diffusion dir
 ├── docs/                         # Documentation figures
 ├── evaluator/                    # Evaluator dir
@@ -37,7 +37,7 @@ E-DiMT-main
 ├── mamba/                        # Mamba model dir
 ├── models/                       # Backbones dir
 │   └── layers.py                 # Layers and utility functions
-│   └── edimt.py                  # E-DiMT backbone
+│   └── edimt.py                  # e-dimt backbone
 │   └── ...                 
 ├── extract_features.py           # Feature extraction script
 ├── requirements.txt              # Requirements
@@ -51,7 +51,7 @@ E-DiMT-main
 First, download and set up the repo:
 
 ```bash
-git clone https://github.com/ahmedgh970/E-DiMT.git
+git clone https://github.com/ahmedgh970/e-dimt.git
 cd EDiMT
 ```
 
