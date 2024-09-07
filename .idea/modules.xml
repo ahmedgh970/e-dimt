@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/e-dimt.iml" filepath="$PROJECT_DIR$/.idea/e-dimt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../e-dimt/.idea/e-dimt.iml" filepath="$PROJECT_DIR$/../e-dimt/.idea/e-dimt.iml" />
     </modules>
   </component>
 </project>
